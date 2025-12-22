@@ -1,0 +1,36 @@
+
+<div class="d-flex flex-column justify-content-center" *ngFor="let info of infos">
+
+  <!--<h1> {{info.name}} </h1>-->
+  <div class="box d-flex justify-content-evenly">
+    <div class="pic ">
+      <img src="{{characterSolo.image}}" alt="picture {{info.name}}">
+    </div>
+    <div class="d-flex flex-column justify-content-center infos-box p-3 px-5">
+              
+          <div>
+            <p class="infos-title mb-0">Name</p>
+            <p class="infosValue"> {{characterSolo.name}} </p>
+          </div>
+          <div>
+            <p class="infos-title mb-0">Gender</p>
+            <p class="infosValue "> {{info.gender}} </p>
+          </div>              
+          <div>
+            <p class="infos-title mb-0">Ki</p>
+            <p class="infosValue"> {{characterSolo.ki}} </p>
+          </div>
+          <div>
+            <p class="infos-title mb-0">Maximal Ki</p>
+            <p class="infosValue"> {{info.maxKi}} </p>
+          </div>                
+          <div>
+            <p class="infos-title mb-0">Race</p>
+            <p class="infosValue"> {{info.race}} </p>
+          </div>            
+         
+    </div>
+    <div class="d-flex flex-column justify-content-start">
+      <button class="btn btn-outline-dark btn-lg" routerLink="/characters"> X </button>
+</div>
+  </div>

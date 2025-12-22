@@ -1,0 +1,78 @@
+
+<main>
+
+  <p>Hint: click anywhere on a row to view the character details.</p>
+<div class="my-table-container">
+
+
+  <mat-table
+    [dataSource]="characters"
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef class="header-cell">
+        ID
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="data-cell">
+        {{ element.id }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef class="header-cell">
+        Name
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="data-cell">
+        {{ element.name }}
+      </mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="race">
+      <mat-header-cell *matHeaderCellDef class="header-cell">
+        Race
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="data-cell">
+        {{ element.race }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="navigateToDetail(row.id)"
+      class="clickable-row"
+    ></mat-row>
+  </mat-table>
+
+  <div *ngIf="isLoading" class="loading-indicator">
+    <p>Loading...</p>
+  </div>
+
+  <mat-paginator
+    [length]=58
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[10]"
+    (page)="onPageChange($event)"
+    class="pokemon-paginator"
+  ></mat-paginator>
+</div>
+  
+
+  
+ <div class="mt-5 mb-5">
+    <p class="text-center">&copy; 2025 | Developed by Even Becker.</p>
+  </div>
+
+<div class="listCharacters">
+  <div class="character" *ngFor="let character of characters">
+    <span class="name">{{character.name}}</span>
+    <button class="btn btn-dark" [routerLink]="['/characters', character.id]">Detail</button>
+
+  </div>
+</div>
+  <div class="mt-5 mb-5">
+    <p class="text-center">&copy; 2025 | Developed by Even Becker.</p>
+  </div>
+    </main>
+
+
