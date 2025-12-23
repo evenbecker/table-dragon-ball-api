@@ -1,11 +1,79 @@
+<div class="container-xxl justify-content-center height">
+  
 
-<div class="d-flex flex-column justify-content-center" *ngFor="let info of infos">
+<div class="height d-flex align-items-center" *ngFor="let info of infos">
 
   <!--<h1> {{info.name}} </h1>-->
   <div class="box d-flex justify-content-evenly">
-    <div class="pic ">
+    <div class="pic " [hidden]="!showInfo">
       <img src="{{characterSolo.image}}" alt="picture {{info.name}}">
     </div>
+  <div id="myInfo" [hidden]="showInfo">
+     <div class="card ">
+       
+        <div class="card-body p-4">     
+            <p>This app uses the Dragon Ball API developped by Antonio Alvarez.
+              <br> This API is only available in spanish.
+              <br>
+              Ki is a value computed from <span class="japan">Genki </span>[Energy], <span class="japan">Yuki </span>[Courage],<span class="japan"> Shoki </span>[Mind] and other factors. 
+                </p>
+        </div>
+          <div class="card-footer">
+          <button
+        (click)="showInfo = !showInfo"
+          type="button"
+          class="btn btn-secondary float-end"
+        >
+          Close
+        </button>
+        </div>
+        </div>
+</div>
+     <div class="card min-w">
+       
+        <div class="card-body ps-5">                    
+          
+ <div>
+            <p class="infos-title mb-0">Name</p>
+            <p class="infosValue"> {{characterSolo.name}} </p>
+          </div>
+          <div>
+            <p class="infos-title mb-0">Gender</p>
+            <p class="infosValue "> {{info.gender}} </p>
+          </div>              
+          <div>
+            <p class="infos-title mb-0">Ki</p>
+            <p class="infosValue"> {{characterSolo.ki}} </p>
+          </div>
+          <div>
+            <p class="infos-title mb-0">Maximal Ki</p>
+            <p class="infosValue"> {{info.maxKi}} </p>
+          </div>                
+          <div>
+            <p class="infos-title mb-0">Race</p>
+            <p class="infosValue"> {{info.race}} </p>
+            <br>
+          </div> 
+        </div>
+            <div class="card-footer">
+<button
+ type="button"
+          class="btn btn-warning"
+          (click)="showInfo = !showInfo"
+>infos</button>
+                  <button
+         routerLink="/characters"
+          type="button"
+          class="btn btn-secondary float-end"
+        >
+          Close
+        </button>
+        </div>
+        </div>
+  
+    
+    <!--
+    
     <div class="d-flex flex-column justify-content-center infos-box p-3 px-5">
               
           <div>
@@ -33,4 +101,7 @@
     <div class="d-flex flex-column justify-content-start">
       <button class="btn btn-outline-dark btn-lg" routerLink="/characters"> X </button>
 </div>
-  </div>
+-->
+  
+</div>
+</div>

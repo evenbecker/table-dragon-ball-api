@@ -4,10 +4,27 @@
 
 .my-table-container {
   margin: 20px auto;
-  max-width: 700px;
+  max-width: 620px;
   
   padding: 10px;
 }
 .clickable-row {
   cursor: pointer;
+}
+.logo {
+  width: 220px;
+  height: auto;
+  margin: 0.2em;
+  
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #e1c643aa);
+}
+img.shenron{
+    height : 10em;
+}
+#hint{
+  font-size: 0.75rem;
 }

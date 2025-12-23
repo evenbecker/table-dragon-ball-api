@@ -3,6 +3,10 @@
    font-size: 1em;
   font-weight: 700;
 }
+.japan{
+  font-weight: 700;
+  color: Firebrick;
+}
 .box{
       width: 100vw;
   height: auto;
@@ -13,17 +17,23 @@
   height: 400px;
 
 }
-.infos-box {
- 
-  border: 4px solid Goldenrod;
+#myInfo{
+  width: 250px;
+}
 
-  background-color: Cornsilk;
-  
+.min-w{
+  width: 34%;
+  max-width: 300px;
+ // max-height: 364px;
 }
 
 .infos-title {
   font-size: 1em;
   font-weight: 700;
-  color: black;
+  color: hsl(208, 6%, 36%);
 
 }
+.height{
+min-height: 98vh;//94
+background-color: hsl(42, 100%, 96%);
+}//48

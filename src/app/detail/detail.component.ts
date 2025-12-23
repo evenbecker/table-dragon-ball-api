@@ -13,13 +13,14 @@ export class DetailComponent {
 
   characterSolo: Character | any;
   infos: Character[] = [];
-
+  showInfo!: Boolean;
 
   activatedRoute = inject(ActivatedRoute);
   charactersServices = inject(CharacterService);
 
 
   ngOnInit(): void {
+    this.showInfo = false;
     this.activatedRoute.params.subscribe((params: any) => {
       let id = String(params.idcharacter);
       this.characterSolo = this.charactersServices.getCharacterId(id).subscribe((response) => {

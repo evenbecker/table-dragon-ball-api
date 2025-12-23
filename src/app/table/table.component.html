@@ -1,10 +1,17 @@
 
 <main>
+  <div class="d-flex justify-content-around mt-2">
+     <a href="https://web.dragonball-api.com/about" target="_blank">
+                <img src="logo_dragonballapi.webp" class="logo" alt="Dragon Ball API" />
+        </a>
 
-  <p>Hint: click anywhere on a row to view the character details.</p>
-<div class="my-table-container">
-
-
+        <img class="shenron" src="shenron.png" alt="I" />
+  
+</div>
+<div>
+<p class="text-center" id="hint">Hint: click anywhere on a row to view the character details.</p>
+</div>
+  <div class="my-table-container">
   <mat-table
     [dataSource]="characters"
     class="mat-elevation-z8"
@@ -59,10 +66,10 @@
   
 
   
- <div class="mt-5 mb-5">
+ <div class="mt-1 mb-5">
     <p class="text-center">&copy; 2025 | Developed by Even Becker.</p>
   </div>
-
+<!--
 <div class="listCharacters">
   <div class="character" *ngFor="let character of characters">
     <span class="name">{{character.name}}</span>
@@ -70,9 +77,8 @@
 
   </div>
 </div>
-  <div class="mt-5 mb-5">
-    <p class="text-center">&copy; 2025 | Developed by Even Becker.</p>
-  </div>
+-->
+
     </main>
 
 
