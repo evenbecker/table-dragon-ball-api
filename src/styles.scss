@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 // Import Bootstrap
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
@@ -12,3 +15,21 @@ body {
      }
 
 
+@include mat.core();
+
+$my-app-primary: mat.m2-define-palette(mat.$m2-red-palette);
+$my-app-accent:   mat.m2-define-palette(mat.$m2-deep-orange-palette); 
+$my-app-warn:    mat.m2-define-palette(mat.$m2-deep-orange-palette); 
+
+$my-app-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $my-app-primary,
+      accent: $my-app-accent,
+      warn: $my-app-warn,
+    ),
+  )
+);
+
+
+@include mat.all-component-themes($my-app-theme);
