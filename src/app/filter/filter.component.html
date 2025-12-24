@@ -1,1 +1,11 @@
-<p>filter works!</p>
+<div class="filter-container">
+  <label for="nameFilter" class="filter-label">Filter by Name:</label>
+  <input
+    id="nameFilter"
+    type="text"
+    [(ngModel)]="filterName"
+    (input)="onFilterNameChange()"
+    placeholder="Enter name"
+    class="filter-input"
+  />
+  </div>

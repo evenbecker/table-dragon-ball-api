@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-filter',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.scss'
 })
 export class FilterComponent {
+@Output() filterNameChange = new EventEmitter<string>();
+        filterName = '';
+
+    onFilterNameChange(): void {
+
+    this.filterNameChange.emit(this.filterName);
+  }
 
 }

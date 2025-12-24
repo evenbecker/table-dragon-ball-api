@@ -3,7 +3,7 @@
 }
 
 .my-table-container {
-  margin: 20px auto;
+  margin: 6px auto;
   max-width: 620px;
   
   padding: 10px;
@@ -20,11 +20,16 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #e1c643aa);
+  filter: drop-shadow(0 0 2em #e1c143aa);
 }
 img.shenron{
     height : 10em;
 }
 #hint{
   font-size: 0.75rem;
+}
+.myfont{
+   font-size: 0.825rem;
+   //flex: 1; // not the bootstrap way
+    
 }

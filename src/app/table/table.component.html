@@ -1,5 +1,5 @@
 
-<main>
+
   <div class="d-flex justify-content-around mt-2">
      <a href="https://web.dragonball-api.com/about" target="_blank">
                 <img src="logo_dragonballapi.webp" class="logo" alt="Dragon Ball API" />
@@ -11,6 +11,10 @@
 <div>
 <p class="text-center" id="hint">Hint: click anywhere on a row to view the character details.</p>
 </div>
+
+  <app-filter   
+    (filterNameChange)="onFilterNameChange($event)"
+  />
   <div class="my-table-container">
   <mat-table
     [dataSource]="characters"
@@ -60,14 +64,14 @@
     [pageSize]="pageSize"
     [pageSizeOptions]="[10]"
     (page)="onPageChange($event)"
-    class="pokemon-paginator"
+    class="my-paginator"
   ></mat-paginator>
 </div>
   
 
   
- <div class="mt-1 mb-5">
-    <p class="text-center">&copy; 2025 | Developed by Even Becker.</p>
+ <div class="d-flex justify-content-center mt-5 mb-3">
+    <p class="myfont">&copy; 2025 | Developed by Even Becker.</p>
   </div>
 <!--
 <div class="listCharacters">
@@ -79,6 +83,6 @@
 </div>
 -->
 
-    </main>
+  
 
 

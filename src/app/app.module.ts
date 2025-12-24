@@ -10,7 +10,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card'; 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -28,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTableModule,
     MatPaginatorModule,
     NgbModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule 
   ],
   providers: [
     provideAnimationsAsync('noop')
