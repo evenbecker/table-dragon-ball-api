@@ -20,7 +20,7 @@ export class CharacterService {
     return this.httpClient.get<Character>(`${this.baseUrl}characters/${id}`);
   }
 
-  filterCharacter(filter: {race?: string, affiliation?: string, name?: string, gender?: string}): Observable<Character[]> {
+  filterCharacters(filter: {name?: string}): Observable<Character[]> {
     return this.httpClient.get<Character[]>(`${this.baseUrl}characters/`, {params: filter});
   }
 

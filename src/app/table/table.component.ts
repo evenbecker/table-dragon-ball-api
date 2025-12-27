@@ -21,6 +21,7 @@ export class TableComponent  implements OnInit {
   totalPages = 1;
 pageSize = 10;
   isLoading = false;
+    filtre: {name?: string} = {};
     filterName = '';
 
     constructor(  
@@ -33,11 +34,7 @@ pageSize = 10;
 
   loadCharacters(page:number = 1) {
     this.dragonballServices.getCharacters(page).subscribe(response => {
-      this.characters = response.items;
-     /* this.dataSource[0] = this.characters[0];
-      this.dataSource[1] = this.characters[1];
-      this.dataSource[2] = this.characters[4];
-      */
+      this.characters = response.items;   
          this.currentPage = response.meta.currentPage;
       this.totalPages = response.meta.totalPages;
     
@@ -54,7 +51,13 @@ pageSize = 10;
       this.loadCharacters(this.currentPage -1)
     }
   }
-  
+  searchCharacters() {
+    this.dragonballServices.filterCharacters(this.filtre).subscribe((characters) => {
+      this.characters = characters;
+    })
+  }
+
+
   onPageChange(event: PageEvent): void {
     this.currentPage = event.pageIndex;
     this.pageSize = event.pageSize;
@@ -66,14 +69,8 @@ pageSize = 10;
   
   onFilterNameChange(filterName: string): void {
     this.filterName = filterName;
-    this.applyFilters();
+    this.filtre.name = this.filterName;
+    this.searchCharacters();
   }
-  applyFilters(): void {
-    this.filteredDataSource = this.characters.filter((character) => {     
-      const matchesName = this.filterName
-        ? character.name.toLowerCase().includes(this.filterName.toLowerCase())
-        : true;
-      return matchesName;
-    });
-  }
+ 
 }
